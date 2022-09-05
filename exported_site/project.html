@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Issue Tracker - 2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-md bg-light" id="navbar_logged_in">
+            <div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">User</a>
+                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" id="logout_button" href="#">Logout</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light navbar-expand-md bg-light" id="navbar_logged_out">
+            <div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-2">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
+                    </ul><button class="btn btn-primary" id="navbar_sign_in_button" type="button" style="margin-right: 6px;">Sign-In</button><button class="btn btn-primary" id="navbar_sign_up_button" type="button">Sign-Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex">
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;"><a class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom" href="/">
+                <div class="d-xxl-flex justify-content-xxl-center align-items-xxl-center project_avatar_small"><span class="text-decoration-none project_avatar_link">T</span></div><span class="fs-6 fw-semibold">Project</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1"><button class="btn btn-toggle align-items-center rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#issues-collapse" aria-expanded="true">Issues</button>
+                    <div id="issues-collapse" class="collapse show sidebar-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a class="link-dark rounded" href="#">List</a></li>
+                            <li><a class="link-dark rounded" href="#">Board</a></li>
+                            <li><a class="link-dark rounded" href="#">To-Do List</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1"><button class="btn btn-toggle align-items-center rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#communication-collapse" aria-expanded="false">Communication</button>
+                    <div id="communication-collapse" class="collapse sidebar-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a class="link-dark rounded" href="#">Chats</a></li>
+                            <li><a class="link-dark rounded" href="#">VR Rooms</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1"><button class="btn btn-toggle align-items-center rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#settings-collapse" aria-expanded="false">Settings</button>
+                    <div id="settings-collapse" class="collapse sidebar-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a class="link-dark rounded" href="#">Integrations</a></li>
+                            <li><a class="link-dark rounded" href="#">Manage Project</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="d-xxl-flex flex-fill justify-content-xxl-center">
+            <div style="width: 1000px;margin-top: 32px;">
+                <div class="d-flex flex-grow-1 margin-bottom-nav-issues">
+                    <ul class="flex-fill nav nav-pills" role="tablist">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#tab-1" role="tab" data-bs-toggle="tab">Open</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tab-2" role="tab" data-bs-toggle="tab">Closed</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#tab-2" role="tab" data-bs-toggle="tab">All</a></li>
+                    </ul>
+                    <div class="tab-content"></div><button class="btn btn-primary" type="button">Button</button>
+                </div>
+                <div class="d-flex search-filter-controls margin-bottom-nav-issues" style="width: 100%;">
+                    <div class="flex-grow-1 margin-right-search"><input type="search" placeholder="Filter by name" style="width: 100%;"></div>
+                    <div class="dropdown"><button class="btn btn-primary dropdown-toggle margin-right-search" aria-expanded="false" data-bs-toggle="dropdown" type="button">Filter</button>
+                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    </div><button class="btn btn-primary" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-sort-descending">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <line x1="4" y1="6" x2="13" y2="6"></line>
+                            <line x1="4" y1="12" x2="11" y2="12"></line>
+                            <line x1="4" y1="18" x2="11" y2="18"></line>
+                            <polyline points="15 15 18 18 21 15"></polyline>
+                            <line x1="18" y1="6" x2="18" y2="18"></line>
+                        </svg></button>
+                </div>
+                <div>
+                    <ul class="list-group" id="group_section">
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-lg-center">
+                                <div class="d-flex align-items-xxl-center flex-grow-1">
+                                    <h2 class="d-xxl-flex align-items-xxl-center issue_full_title"><a class="text-decoration-none issue_title" href="project.html"><span>Example Issue</span></a></h2>
+                                    <div class="d-md-flex align-items-md-center"><span class="issue-role-label">In progress</span></div>
+                                </div>
+                                <div class="justify-content-lg-end">
+                                    <div><span style="font-size: 13px;">Updated&nbsp;<time class="timeago" datetime="2008-07-17T09:24:17Z">July 17, 2008</time></span></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/moralis-v1@1.11.0/dist/moralis.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sidebars.js"></script>
+</body>
+
+</html>
